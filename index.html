@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кольори фону</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .color-selector {
+            margin-bottom: 20px;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid black;
+        }
+        button#checkButton, button#checkButton1, #input, button#checkButton2,
+        button#checkButton3, button#checkButton4 {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #result, #result1, #result2, input[type="submit"] {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Choose background color</h2>
+
+<div class="color-selector">
+    <select id="colorSelect">
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+</div>
+
+<h3>Logic Operation "AND"</h3>
+<table>
+    <thead>
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>A AND B</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td><input type="checkbox" id="checkbox1"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td><input type="checkbox" id="checkbox2"></td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td><input type="checkbox" id="checkbox3"></td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td><input type="checkbox" id="checkbox4"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button id="checkButton">Check right answer</button>
+
+<div id="result"></div>
+
+<h2 Testing></h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Possible answers</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>How much 3*4?</td>
+            <td>
+                <select id="answer1">
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button id="checkButton1">Check right answer</button>
+
+<div id="result1"></div>
+
+<h2>Registration</h2>
+
+<form id="registrationForm" action="zaglushka.html" method="post" onsubmit="return validateForm()">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br>
+    
+    <label for="confirm_password">Password confirmation:</label><br>
+    <input type="password" id="confirm_password" name="confirm_password" required><br>  
+    
+    <input type="submit" value="Registration">
+</form>
+
+<div id="errorMessages"></div>
+
+<h2>Calculator</h2>
+
+<form id="sumForm">
+    <div class="input-field">
+        <label for="number1">Число 1:</label><br>
+        <input type="number" id="number1" name="number1" required><br>
+    </div>
+    <div class="input-field">
+        <label for="number2">Число 2:</label><br>
+        <input type="number" id="number2" name="number2" required><br>
+    </div>
+    <button id="checkButton2" type="button">Обчислити суму</button>
+</form>
+
+<div id="result2"></div>
+<div id="errorMessages2"></div>
+
+<h2>E-mail</h2>
+
+<form name="mailer" method="post1" action="" enctype="text/plain" onsubmit="return handleSubmit(event)">
+    <table cellspacing="1" cellpadding="2">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="Name" size="24" required></td>
+        </tr>
+        <tr>
+            <td>Subject:</td>
+            <td><input type="text" name="Subject" size="24" required></td>
+        </tr>
+        <tr>
+            <td>Message:</td>
+            <td><textarea name="Message" cols="40" rows="6" required></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="checkButton3" type="button">Send</button>
+                <button id="checkButton4" type="button">Clear</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script src="main.js"></script> 
+</body>
+</html>
+
